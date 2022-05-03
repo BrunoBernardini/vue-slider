@@ -38,6 +38,7 @@ const app = new Vue({
             }
         ],
         indexSlide: 0,
+        secondsOfDelay: 3,
     },
     methods: {
         prevSlide(){
@@ -46,6 +47,11 @@ const app = new Vue({
         nextSlide(){
             if(++this.indexSlide>this.slides.length-1) this.indexSlide=0;
         }
+    },
+    mounted(){
+        setInterval(() => {
+            this.nextSlide();
+        }, this.secondsOfDelay*1000)
     }
 })
 
