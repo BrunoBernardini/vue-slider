@@ -39,6 +39,7 @@ const app = new Vue({
         ],
         indexSlide: 0,
         secondsOfDelay: 3,
+        timer: null,
     },
     methods: {
         prevSlide(){
@@ -46,15 +47,17 @@ const app = new Vue({
         },
         nextSlide(){
             if(++this.indexSlide>this.slides.length-1) this.indexSlide=0;
+        },
+        playCycle(){
+            this.timer = setInterval(() => {
+                this.nextSlide();
+            }, this.secondsOfDelay*1000);
+        },
+        stopCycle(){
+            clearInterval(this.timer);
         }
     },
     mounted(){
-        setInterval(() => {
-            this.nextSlide();
-        }, this.secondsOfDelay*1000)
+        this.playCycle();
     }
 })
-
-
-
-console.log(slides);

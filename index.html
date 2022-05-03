@@ -24,7 +24,10 @@
                     </div>
                 </div>
 
-                <div class="thumbs">
+                <div
+                    @mouseover="stopCycle()"
+                    @mouseleave="playCycle()"
+                    class="thumbs">
                     <div @click="prevSlide()" class="prev"></div>
                     <div @click="nextSlide()" class="next"></div>
                     <div 
