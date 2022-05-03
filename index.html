@@ -25,12 +25,13 @@
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev"></div>
-                    <div class="next"></div>
+                    <div @click="prevSlide()" class="prev"></div>
+                    <div @click="nextSlide()" class="next"></div>
                     <div 
                         v-for="(slide, index) in slides"
                         class="thumb"
-                        :class="index === indexSlide ? 'active':''">
+                        :class="index === indexSlide ? 'active':''"
+                        @click="indexSlide = index">
                         <img :src="slide.image" alt="slide.title">
                     </div>
                 </div>

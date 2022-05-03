@@ -40,7 +40,12 @@ const app = new Vue({
         indexSlide: 0,
     },
     methods: {
-
+        prevSlide(){
+            if(--this.indexSlide<0) this.indexSlide=this.slides.length-1;
+        },
+        nextSlide(){
+            if(++this.indexSlide>this.slides.length-1) this.indexSlide=0;
+        }
     }
 })
 
