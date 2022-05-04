@@ -33,9 +33,9 @@
                     <div 
                         v-for="(slide, index) in slides"
                         class="thumb"
-                        :class="index === indexSlide ? 'active':''"
+                        :class="{'active':index === indexSlide}"
                         @click="indexSlide = index">
-                        <img :src="slide.image" alt="slide.title">
+                        <img :src="slide.image" :alt="slide.title">
                     </div>
                 </div>
 

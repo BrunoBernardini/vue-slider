@@ -39,7 +39,7 @@ const app = new Vue({
         ],
         indexSlide: 0,
         secondsOfDelay: 3,
-        timer: null,
+        timer: null
     },
     methods: {
         prevSlide(){
